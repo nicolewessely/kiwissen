@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import AssessmentForm from "./components/AssessmentForm";
 import AssessmentResult from "./components/AssessmentResult";
 import "./App.css";
@@ -17,6 +18,7 @@ function App() {
       ) : (
         <AssessmentResult answers={answers} onRestart={() => setAnswers(null)} />
       )}
+      <SpeedInsights />
     </div>
   );
 }
