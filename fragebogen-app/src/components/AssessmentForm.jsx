@@ -37,10 +37,39 @@ export default function AssessmentForm({ onSubmit }) {
             color: '#111',
           }}
         >
-          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 12 }}>{dim.dimension}</h2>
+          <h2
+            style={{
+              fontSize: 26,
+              fontWeight: 700,
+              marginBottom: 12,
+              color: [
+                "Strategie & Management",
+                "Daten & Infrastruktur",
+                "Kompetenzen & Kultur",
+                "Prozesse & Use Cases",
+                "Governance & Ethik",
+                "Change Management & Umsetzung"
+              ].includes(dim.dimension)
+                ? "#180036"
+                : undefined,
+              textAlign: [
+                "Strategie & Management",
+                "Daten & Infrastruktur",
+                "Kompetenzen & Kultur",
+                "Prozesse & Use Cases",
+                "Governance & Ethik",
+                "Change Management & Umsetzung"
+              ].includes(dim.dimension)
+                ? "center"
+                : "left"
+            }}
+          >
+            {dim.dimension}
+          </h2>
+          <hr style={{ border: 'none', borderTop: '2px solid #180036', margin: '12px 0 24px 0' }} />
           {dim.questions.map((q, qIdx) => (
             <div key={q.id} className="question-block" style={{ marginBottom: 16 }}>
-              <p style={{ marginBottom: 8 }}><b>{q.text}</b></p>
+              <p style={{ marginBottom: 8, textAlign: 'left' }}><b>{q.text}</b></p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                 {q.options.map((opt, oIdx) => (
                   <label key={oIdx} style={{ display: "block", marginBottom: 4, textAlign: "left", cursor: "pointer" }}>

@@ -19,6 +19,12 @@ function App() {
         <AssessmentResult answers={answers} onRestart={() => setAnswers(null)} />
       )}
       <SpeedInsights />
+
+      <footer style={{ marginTop: 48, textAlign: 'center', color: '#fff', fontSize: 14, lineHeight: 1.6 }}>
+  KI Readiness Check | Version: 1.0.0 | Autor: Nicole Wessely | Erstellt: 21.09.2025<br />
+        © 2025 Nicole Wessely. Alle Rechte vorbehalten.<br />
+        © Nicole Wessely. Alle Texte original erstellt. Nutzung mit Quellenangabe erlaubt.
+      </footer>
     </div>
   );
 }
